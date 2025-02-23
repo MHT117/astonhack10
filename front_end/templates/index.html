@@ -13,7 +13,7 @@
             <fieldset>
                 <legend>Financial Details</legend>
                 <label for="person_name">Person Name:</label>
-                <input type="text" name="person_name" id="person_name" required>
+                <input type="text" pattern="[A-Za-z\s]+" name="person_name" id="person_name" required>
                 
                 <label for="annual_income">Annual Income:</label>
                 <input type="number" name="annual_income" id="annual_income" step="0.01" required>
@@ -43,8 +43,8 @@
             
             <fieldset>
                 <legend>Savings Goal</legend>
-                <label for="savings_rate_goal">Savings Rate Goal (e.g., 0.25 for 25%):</label>
-                <input type="number" name="savings_rate_goal" id="savings_rate_goal" step="0.01" required>
+                <label for="savings_rate_goal">Savings Rate Goal (e.g., 25 for 25%):</label>
+                <input type="number" name="savings_rate_goal" id="savings_rate_goal" step="0.01" min="0" max="1" required>
             </fieldset>
             
             <input type="submit" value="Get Advice">
