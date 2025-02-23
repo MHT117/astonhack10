@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wealth Expenditure Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wealth Expenditure Advisor</h1>
+        </header>
+        <form method="post">
+            <fieldset>
+                <legend>Financial Details</legend>
+                <label for="person_name">Person Name:</label>
+                <input type="text" pattern="[A-Za-z\s]+" name="person_name" id="person_name" required>
+                
+                <label for="annual_income">Annual Income:</label>
+                <input type="number" name="annual_income" id="annual_income" step="0.01" required>
+                
+                <label for="net_worth">Net Worth:</label>
+                <input type="number" name="net_worth" id="net_worth" step="0.01" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Risk Profile</legend>
+                <label for="risk_profile">Risk Profile:</label>
+                <select name="risk_profile" id="risk_profile">
+                    <option value="low">Low</option>
+                    <option value="moderate" selected>Moderate</option>
+                    <option value="high">High</option>
+                </select>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Current Expenses</legend>
+                <label for="essentials">Essentials Expense:</label>
+                <input type="number" name="essentials" id="essentials" step="0.01" required>
+                
+                <label for="discretionary">Discretionary Expense:</label>
+                <input type="number" name="discretionary" id="discretionary" step="0.01" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Savings Goal</legend>
+                <label for="savings_rate_goal">Savings Rate Goal (e.g., 25 for 25%):</label>
+                <input type="number" name="savings_rate_goal" id="savings_rate_goal" step="0.01" min="0" max="1" required>
+            </fieldset>
+            
+            <input type="submit" value="Get Advice">
+        </form>
+    </div>
+</body>
+</html>

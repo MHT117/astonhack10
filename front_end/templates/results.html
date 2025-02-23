@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advisor Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container results-section">
+        <header>
+            <h1>Your Wealth Expenditure Advice</h1>
+        </header>
+        
+        <h2>Basic Budget Allocation</h2>
+        <ul>
+            <li>Essentials: ${{ basic.essentials}}</li>
+            <li>Discretionary: ${{ basic.discretionary }}</li>
+            <li>Savings: ${{ basic.savings }}</li>
+        </ul>
+        
+        <h2>Advanced Wealth Expenditure Recommendation</h2>
+        <ul>
+            <li>Essentials: ${{ advanced.allocations.essentials }}</li>
+            <li>Discretionary: ${{ advanced.allocations.discretionary }}</li>
+            <li>Savings: ${{ advanced.allocations.savings }}</li>
+        </ul>
+        
+        <h2>Expenditure Advisor</h2>
+        <p>Your current savings rate is: {{ advisor.current_savings_rate | round(2) }}</p>
+        <p>{{ advisor.message }}</p>
+        
+        <br>
+        <a href="{{ url_for('index') }}">Back to Form</a>
+    </div>
+</body>
+</html>
